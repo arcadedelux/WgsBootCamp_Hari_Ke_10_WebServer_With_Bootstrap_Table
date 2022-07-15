@@ -1,0 +1,39 @@
+
+
+<!-- <div>
+    <% if (contacts.length < 1) { %>
+        <h3>Maaf Data Tidak Ditemukan</h3>
+    <% }else {  %>
+        <h2>Daftar Contact</h2>
+            <ol>
+                <% contacts.forEach(element => { %>
+                 <li>Name : <%= element.name %><br>Email : <%= element.email  %><br><Phone: <%= element.phone  %>  </li><br>
+                <% }) %> 
+            </ol>
+        
+        <% } %> 
+</div> -->
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">No</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        <% if (contacts.length < 1) { %>
+            <h3>Maaf Data Tidak Ditemukan</h3>
+        <% }else {  %>
+            <% let i =1 %> 
+                    <% contacts.forEach(element => { %>
+                        <tr>
+                            <td><%= i++%> </td>
+                           <td><%= element.name %></td> 
+                            <td><%= element.email  %></td>
+                        </tr>
+                    <% }) %> 
+            <% } %> 
+    </tbody>
+  </table>
